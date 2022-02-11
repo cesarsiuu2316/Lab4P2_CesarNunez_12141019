@@ -24,6 +24,16 @@ public class Agronomo extends Aldeano{
     public String toString() {
         return super.toString() + ", (Agronomo): ptsAtaque=" + ptsAtaque;
     }
+
+    @Override
+    public void ataque(Aldeano aldeano) {
+        
+    }
+
+    @Override
+    public void ataque() {
+        
+    }
     
     
     

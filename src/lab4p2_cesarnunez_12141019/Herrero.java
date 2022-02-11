@@ -26,6 +26,16 @@ public class Herrero extends Aldeano{
         return super.toString() + ", (Herrero): ptsAtaque=" + ptsAtaque;
     }
 
+    @Override
+    public void ataque(Aldeano aldeano) {
+        
+    }
+
+    @Override
+    public void ataque() {
+        
+    }
+
     
     
 }

@@ -25,6 +25,16 @@ public class Pacifista extends Aldeano{
     public String toString() {
         return super.toString() + ", (Pacifista): discrsoPaz=" + discrsoPaz;
     }
+
+    @Override
+    public void ataque(Aldeano aldeano) {
+        
+    }
+
+    @Override
+    public void ataque() {
+        
+    }
        
     
 }

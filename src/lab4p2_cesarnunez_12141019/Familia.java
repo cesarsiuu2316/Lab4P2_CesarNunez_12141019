@@ -15,11 +15,27 @@ public class Familia {
         this.apellido = apellido;
     }
 
-    @Override
-    public String toString() {
-        return "apellido=" + apellido + ", aldeanos=" + aldeanos;
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public ArrayList<Aldeano> getAldeanos() {
+        return aldeanos;
+    }
+
+    public void setAldeanos(ArrayList<Aldeano> aldeanos) {
+        this.aldeanos = aldeanos;
     }
     
     
-    
+
+    @Override
+    public String toString() {
+        return "apellido=" + apellido + ", aldeanos=" + aldeanos;
+    }       
+        
 }

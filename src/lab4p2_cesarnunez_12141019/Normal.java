@@ -24,5 +24,15 @@ public class Normal extends Aldeano{
     public String toString() {
         return super.toString() + ", (Normal): ptsAtaque=" + ptsAtaque;
     }
+
+    @Override
+    public void ataque(Aldeano aldeano) {
+        
+    }
+
+    @Override
+    public void ataque() {
+        
+    }
     
 }

@@ -24,6 +24,16 @@ public class Explosivo extends Aldeano{
     public String toString() {
         return super.toString() + ", (Explosivo): ptsAtaque=" + ptsAtaque;
     }
+
+    @Override
+    public void ataque(Aldeano aldeano) {
+        
+    }
+
+    @Override
+    public void ataque() {
+        
+    }
     
     
         
