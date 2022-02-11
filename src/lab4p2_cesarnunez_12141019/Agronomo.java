@@ -1,16 +1,16 @@
 package lab4p2_cesarnunez_12141019;
 
-public class Normal extends Aldeano{
+public class Agronomo extends Aldeano{
     
-    private double ptsAtaque = 50;
+    private double ptsAtaque = 100;
 
-    public Normal() {
+    public Agronomo() {
         super();
     }
 
-    public Normal(String nombre, String apellido, int edad, int ptsVida) {
+    public Agronomo(String nombre, String apellido, int edad, double ptsVida) {
         super(nombre, apellido, edad, ptsVida);
-    }
+    }    
 
     public double getPtsAtaque() {
         return ptsAtaque;
@@ -22,7 +22,9 @@ public class Normal extends Aldeano{
 
     @Override
     public String toString() {
-        return super.toString() + ", (Normal): ptsAtaque=" + ptsAtaque;
+        return super.toString() + ", (Agronomo): ptsAtaque=" + ptsAtaque;
     }
+    
+    
     
 }

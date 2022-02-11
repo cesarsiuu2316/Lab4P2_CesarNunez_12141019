@@ -1,14 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab4p2_cesarnunez_12141019;
 
-/**
- *
- * @author cesar
- */
+import java.util.ArrayList;
+
+
 public class Familia {
+    
+    private String apellido;
+    private ArrayList<Aldeano> aldeanos = new ArrayList();
+
+    public Familia() {
+    }
+
+    public Familia(String apellido) {
+        this.apellido = apellido;
+    }
+
+    @Override
+    public String toString() {
+        return "apellido=" + apellido + ", aldeanos=" + aldeanos;
+    }
+    
+    
     
 }

@@ -1,14 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lab4p2_cesarnunez_12141019;
 
-/**
- *
- * @author cesar
- */
-public class Pacifista {
+public class Pacifista extends Aldeano{
+    
+    private double discrsoPaz = 0;
+
+    public Pacifista() {
+        super();
+    }
+
+    public Pacifista(String nombre, String apellido, int edad, int ptsVida) {
+        super(nombre, apellido, edad, ptsVida);
+    }
+
+    public double getDiscrsoPaz() {
+        return discrsoPaz;
+    }
+
+    public void setDiscrsoPaz(int discrsoPaz) {
+        this.discrsoPaz = discrsoPaz;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", (Pacifista): discrsoPaz=" + discrsoPaz;
+    }
+       
     
 }
