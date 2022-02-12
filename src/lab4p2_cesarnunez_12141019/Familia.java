@@ -29,9 +29,7 @@ public class Familia {
 
     public void setAldeanos(ArrayList<Aldeano> aldeanos) {
         this.aldeanos = aldeanos;
-    }
-    
-    
+    }    
 
     @Override
     public String toString() {

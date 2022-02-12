@@ -1,7 +1,10 @@
 package lab4p2_cesarnunez_12141019;
 
+import java.util.Random;
+
 public class Explosivo extends Aldeano{
-    
+
+    private Random rand = new Random();
     private double ptsAtaque = 250;
 
     public Explosivo() {
@@ -25,16 +28,18 @@ public class Explosivo extends Aldeano{
         return super.toString() + ", (Explosivo): ptsAtaque=" + ptsAtaque;
     }
 
-    @Override
     public void ataque(Aldeano aldeano) {
-        
+        int odds = 1 + rand.nextInt(100);
+        if(odds <= 85){
+            if(aldeano instanceof Agronomo){
+            aldeano.setPtsVida(aldeano.getPtsVida() - (ptsAtaque * 1.1));
+            }else if(aldeano instanceof Herrero){
+                aldeano.setPtsVida(aldeano.getPtsVida() - (ptsAtaque * 1.05));
+            }else{
+                aldeano.setPtsVida(aldeano.getPtsVida() - ptsAtaque);
+            }
+        }
     }
-
-    @Override
-    public void ataque() {
-        
-    }
-    
     
         
 }

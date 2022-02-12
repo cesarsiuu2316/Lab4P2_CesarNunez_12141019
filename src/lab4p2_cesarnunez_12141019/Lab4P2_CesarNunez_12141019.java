@@ -1,12 +1,14 @@
 package lab4p2_cesarnunez_12141019;
 
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Lab4P2_CesarNunez_12141019 {
     
     private static ArrayList<Familia> familias = new ArrayList();
     private static Familia montesco = new Familia("Montesco");
+    private static Random rand = new Random();
 
     public static void main(String[] args) {
         
@@ -48,6 +50,11 @@ public class Lab4P2_CesarNunez_12141019 {
                     break;
                 } // case
                 
+                case 5:{
+                    pelear();
+                    break;
+                } // case
+                
             } // switch
         } // while        
     } // main
@@ -57,7 +64,7 @@ public class Lab4P2_CesarNunez_12141019 {
                 + "1. Salir\n"
                 + "2. Crear familia\n"
                 + "3. Crear aldeano\n"
-                + "4. Imprimir familia\n"
+                + "4. Imprimir familias\n"
                 + "5. Pelear\n"
                 + "Ingrese una opción:"));
         return opcion;
@@ -110,7 +117,16 @@ public class Lab4P2_CesarNunez_12141019 {
             double ptsVida = Integer.parseInt(JOptionPane.showInputDialog("Puntos de vida: "));
             nuevo = new Pacifista(nombre, apellido, edad, ptsVida); 
         }else if(op == 3){
-            nuevo = new Herrero(nombre, apellido, edad);
+            double ptsAtaque = Integer.parseInt(JOptionPane.showInputDialog("Puntos de ataque (200-500): "));
+            nuevo = new Herrero(nombre, apellido, edad);   
+            while(true){
+                try{
+                    ((Herrero) nuevo).setPtsAtaque(ptsAtaque);
+                    break;
+                }catch(Exception e){
+                    JOptionPane.showMessageDialog(null, "Tiene que ser un número entre 200 y 500!");
+                }
+            }            
         }else if(op == 4){
             double ptsVida = Integer.parseInt(JOptionPane.showInputDialog("Puntos de vida: "));
             nuevo = new Agronomo(nombre, apellido, edad, ptsVida); 
@@ -121,15 +137,24 @@ public class Lab4P2_CesarNunez_12141019 {
             JOptionPane.showMessageDialog(null, "La opción que ingresó es incorrecta!");
         }
         
-        String apellidoFamilia = JOptionPane.showInputDialog("Apellido de familia a la que desea agregar el aldeano:");
         for (Familia familia : familias) {
-            if(familia.getApellido().equalsIgnoreCase(apellidoFamilia)){
+            if(familia.getApellido().equalsIgnoreCase(nuevo.getApellido())){
                 familia.getAldeanos().add(nuevo);
             }
         }
     }
     
     public static void imprimirFamilias(){
+        String s = "1) " +  montesco.toString() + "\n";
+        int i = 2;
+        for (Familia familia : familias) {
+            s += i + ") " + familia.toString() + "\n";
+            i++;
+        }
+        JOptionPane.showMessageDialog(null, s);
+    }
+    
+    public static void pelear(){
         
     }
     

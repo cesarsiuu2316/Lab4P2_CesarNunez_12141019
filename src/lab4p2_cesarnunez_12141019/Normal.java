@@ -8,7 +8,7 @@ public class Normal extends Aldeano{
         super();
     }
 
-    public Normal(String nombre, String apellido, int edad, int ptsVida) {
+    public Normal(String nombre, String apellido, int edad, double ptsVida) {
         super(nombre, apellido, edad, ptsVida);
     }
 
@@ -25,14 +25,12 @@ public class Normal extends Aldeano{
         return super.toString() + ", (Normal): ptsAtaque=" + ptsAtaque;
     }
 
-    @Override
     public void ataque(Aldeano aldeano) {
-        
-    }
-
-    @Override
-    public void ataque() {
-        
+        if(aldeano instanceof Pacifista){
+            aldeano.setPtsVida(aldeano.getPtsVida() - (ptsAtaque * 1.05));
+        }else{
+            aldeano.setPtsVida(aldeano.getPtsVida() - ptsAtaque);
+        }
     }
     
 }

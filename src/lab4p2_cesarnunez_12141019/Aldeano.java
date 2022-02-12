@@ -63,7 +63,4 @@ public class Aldeano {
     public void ataque(Aldeano aldeano){
     }    
     
-    public void ataque(){   
-    }    
-        
 }
