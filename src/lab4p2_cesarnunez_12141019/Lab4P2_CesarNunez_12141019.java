@@ -173,6 +173,8 @@ public class Lab4P2_CesarNunez_12141019 {
         Collections.shuffle(vsFamilia.getAldeanos());
         Aldeano a = montesco.getAldeanos().get(0);       
         Aldeano b;
+        double danioA = 0;
+        double danioB = 0;
         
         if(a instanceof Explosivo){
             Collections.shuffle(montesco.getAldeanos());
@@ -188,18 +190,18 @@ public class Lab4P2_CesarNunez_12141019 {
             while(a.getPtsVida() > 0 && b.getPtsVida() > 0){
                 if(turno / 2 == 0){
                     double v = a.getPtsVida();
-                    a.ataque(b);
+                    danioB = a.ataque(b);
                     turno++;
                 }else{
-                    b.ataque(a);
+                    danioA = b.ataque(a);
                     turno++;
                 }
             }
             
             if(a.getPtsVida() > 0){
-                
+                a.setPtsVida(a.getPtsVida() + danioA);
             }else{
-
+                b.setPtsVida(b.getPtsVida() + danioB);
             }   
                 
         }else if(a instanceof SuperGranjero){
