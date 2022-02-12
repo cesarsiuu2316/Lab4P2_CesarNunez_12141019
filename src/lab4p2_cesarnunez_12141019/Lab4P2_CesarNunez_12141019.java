@@ -1,6 +1,7 @@
 package lab4p2_cesarnunez_12141019;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -51,7 +52,19 @@ public class Lab4P2_CesarNunez_12141019 {
                 } // case
                 
                 case 5:{
-                    pelear();
+                    String apellido = JOptionPane.showInputDialog("Ingrese el apellido de la familia:");
+                    while(familias.size() > 1 && apellido.equalsIgnoreCase("Capuleto")){
+                        apellido = JOptionPane.showInputDialog("Ingrese el apellido de la familia:");
+                    }
+
+                    Familia vsFamilia = new Familia();
+                    for (Familia familia : familias) {
+                        if(familia.getApellido().equalsIgnoreCase(apellido)){
+                            vsFamilia = familia;
+                        }
+                    }
+                    
+                    pelear(vsFamilia);
                     break;
                 } // case
                 
@@ -154,7 +167,38 @@ public class Lab4P2_CesarNunez_12141019 {
         JOptionPane.showMessageDialog(null, s);
     }
     
-    public static void pelear(){
+    public static void pelear(Familia vsFamilia){
+        
+        Collections.shuffle(montesco.getAldeanos());
+        Collections.shuffle(vsFamilia.getAldeanos());
+        int x = 1;
+        
+        while(montesco.getAldeanos().get(0).getPtsVida() > 0 && vsFamilia.getAldeanos().get(0).getPtsVida() > 0){
+            
+            Aldeano a;
+            if(x == 1){
+                a = montesco.getAldeanos().get(0);
+            }else{
+                a = vsFamilia.getAldeanos().get(0);
+            }
+            
+            if(a instanceof Explosivo){
+                int c = 1 + rand.nextInt(2);
+                if(c == 1){
+                    
+                }
+            }else if(a instanceof SuperGranjero){
+                
+            }else{
+                
+            }
+        }
+        
+        if(montesco.getAldeanos().get(0).getPtsVida() > 0){
+            
+        }else{
+            
+        }
         
     }
     
