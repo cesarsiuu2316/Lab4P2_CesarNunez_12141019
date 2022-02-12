@@ -60,8 +60,8 @@ public class Aldeano {
         return "nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", ptsVida=" + ptsVida;
     }
     
-    public void ataque(Aldeano aldeano){
-        
+    public double ataque(Aldeano aldeano){
+        return 0;
     }    
     
 }

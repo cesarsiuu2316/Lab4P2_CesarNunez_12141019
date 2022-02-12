@@ -171,35 +171,50 @@ public class Lab4P2_CesarNunez_12141019 {
         
         Collections.shuffle(montesco.getAldeanos());
         Collections.shuffle(vsFamilia.getAldeanos());
-        int x = 1;
+        Aldeano a = montesco.getAldeanos().get(0);       
+        Aldeano b;
         
-        while(montesco.getAldeanos().get(0).getPtsVida() > 0 && vsFamilia.getAldeanos().get(0).getPtsVida() > 0){
-            
-            Aldeano a;
+        if(a instanceof Explosivo){
+            Collections.shuffle(montesco.getAldeanos());
+            Collections.shuffle(vsFamilia.getAldeanos());
+            int x = 1 + rand.nextInt(2);
             if(x == 1){
-                a = montesco.getAldeanos().get(0);
+                b = montesco.getAldeanos().get(0);
             }else{
-                a = vsFamilia.getAldeanos().get(0);
+                b = vsFamilia.getAldeanos().get(0);
             }
             
-            if(a instanceof Explosivo){
-                int c = 1 + rand.nextInt(2);
-                if(c == 1){
-                    
+            int turno = 0;
+            while(a.getPtsVida() > 0 && b.getPtsVida() > 0){
+                if(turno / 2 == 0){
+                    double v = a.getPtsVida();
+                    a.ataque(b);
+                    turno++;
+                }else{
+                    b.ataque(a);
+                    turno++;
                 }
-            }else if(a instanceof SuperGranjero){
+            }
+            
+            if(a.getPtsVida() > 0){
                 
             }else{
+
+            }   
                 
-            }
+        }else if(a instanceof SuperGranjero){
+
+        }else{
+
         }
         
         if(montesco.getAldeanos().get(0).getPtsVida() > 0){
             
         }else{
             
-        }
-        
+        }   
+
+                   
     }
     
 } // clase

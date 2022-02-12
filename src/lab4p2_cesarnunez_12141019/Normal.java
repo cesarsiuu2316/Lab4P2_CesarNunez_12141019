@@ -25,11 +25,13 @@ public class Normal extends Aldeano{
         return super.toString() + ", (Normal): ptsAtaque=" + ptsAtaque;
     }
 
-    public void ataque(Aldeano aldeano) {
+    public double ataque(Aldeano aldeano) {
         if(aldeano instanceof Pacifista){
             aldeano.setPtsVida(aldeano.getPtsVida() - (ptsAtaque * 1.05));
+            return ptsAtaque * 1.05;
         }else{
             aldeano.setPtsVida(aldeano.getPtsVida() - ptsAtaque);
+            return ptsAtaque;
         }
     }
     

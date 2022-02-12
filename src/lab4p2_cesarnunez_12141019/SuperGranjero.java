@@ -13,14 +13,16 @@ public class SuperGranjero extends Aldeano{
         super.setPtsVida(1000);
     }
 
-    public void ataque(Aldeano aldeano) {
+    public double ataque(Aldeano aldeano) {
         if(aldeano instanceof Herrero){
             aldeano.setPtsVida(aldeano.getPtsVida() - (ptsAtaque * 1.1));
+            return ptsAtaque * 1.1;
         }else if(aldeano instanceof Explosivo){
             aldeano.setPtsVida(aldeano.getPtsVida() - (ptsAtaque * 1.15));
+            return ptsAtaque * 1.15;
         }else{
             aldeano.setPtsVida(aldeano.getPtsVida() - ptsAtaque);
+            return ptsAtaque;
         }
-    }
-    
+    }    
 }

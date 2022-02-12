@@ -28,16 +28,21 @@ public class Agronomo extends Aldeano{
         return super.toString() + ", (Agronomo): ptsAtaque=" + ptsAtaque;
     }
 
-    public void ataque(Aldeano aldeano) {
+    public double ataque(Aldeano aldeano) {
         int odds = 1 + rand.nextInt(100);
         if(odds <= 95){
             if(aldeano instanceof Normal){
-            aldeano.setPtsVida(aldeano.getPtsVida() - (ptsAtaque * 1.1));
+                aldeano.setPtsVida(aldeano.getPtsVida() - (ptsAtaque * 1.1));
+                return ptsAtaque * 1.1;
             }else if(aldeano instanceof Pacifista){
                 aldeano.setPtsVida(aldeano.getPtsVida() - (ptsAtaque * 1.05));
+                return ptsAtaque * 1.05;
             }else{
                 aldeano.setPtsVida(aldeano.getPtsVida() - ptsAtaque);
+                return ptsAtaque;
             }
+        }else{
+            return 0;
         }
     }
     

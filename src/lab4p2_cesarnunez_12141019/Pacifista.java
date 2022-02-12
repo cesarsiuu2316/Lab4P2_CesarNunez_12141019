@@ -26,8 +26,9 @@ public class Pacifista extends Aldeano{
         return super.toString() + ", (Pacifista): discrsoPaz=" + discursoPaz;
     }
 
-    public void ataque(Aldeano aldeano) {
+    public double ataque(Aldeano aldeano) {
          aldeano.setPtsVida(aldeano.getPtsVida() - discursoPaz);
+         return 0;
     }
     
 }
